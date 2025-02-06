@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Summarizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: max-height 0.3s ease;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #loading {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+    }
+
+    #summary {
+      margin-top: 20px;
+      line-height: 1.6;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      transition: max-height 0.3s ease;
+    }
+    
+    #errorMessage {
+      color: red;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube Video Summarizer</h1>
+    <button id="summarizeButton" aria-label="Summarize Video" role="button" aria-controls="summary">Summarize</button>
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="summary"></div>
+    <div id="errorMessage">An error occurred while fetching the summary.</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
